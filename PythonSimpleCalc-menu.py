@@ -1,21 +1,31 @@
 #powershell line to run script:
 #python SCRIPTNAMEHERE.py
 
-#name = input("Enter your name:")
-#print(f"Hello {name}")
 first_number = None
 while first_number is None:     
     try:
-         first_number = int(input("Enter the first number: "))
+         first_number = float(input("Enter the first number: "))
     except ValueError:
        print("That's not a valid number.")
 
 second_number = None
 while second_number is None:     
     try:
-         second_number = int(input("Enter the second number: "))
+         second_number = float(input("Enter the second number: "))
     except ValueError:
        print("That's not a valid number.")
+
+def option_one():
+    print(first_number + second_number)
+def option_two():
+    print(first_number - second_number)
+def option_three():
+    print(first_number * second_number)
+def option_four():
+    if second_number == 0:
+        print("Error: Division by Zero") #might not be needed, due to pythons built in div/zero error messaging
+    else:
+        print(first_number / second_number)
 
 # ------ Menu ------
 menuItems = ['1. Addition', 
@@ -28,6 +38,11 @@ for menuItem in menuItems:      # cycle through menu items
     print(menuItem)             # show menu item
  
 choice = input('Please enter your choice: ')    # get user selection
-
-
-#print(f"Do you want a {fav2} {fav1} with {fav3} legs?")
+if choice == '1':
+    option_one()
+elif choice == '2':
+    option_two()
+elif choice == '3':
+    option_three()
+elif choice == '4':
+    option_four()
