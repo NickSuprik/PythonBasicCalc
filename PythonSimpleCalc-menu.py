@@ -1,31 +1,31 @@
 #powershell line to run script:
 #python SCRIPTNAMEHERE.py
 
-first_number = None
-while first_number is None:     
+num1 = None
+while num1 is None:     
     try:
-         first_number = float(input("Enter the first number: "))
+         num1 = float(input("Enter the first number: "))
     except ValueError:
        print("That's not a valid number.")
 
-second_number = None
-while second_number is None:     
+num2 = None
+while num2 is None:     
     try:
-         second_number = float(input("Enter the second number: "))
+         num2 = float(input("Enter the second number: "))
     except ValueError:
        print("That's not a valid number.")
 
 def option_one():
-    print(first_number + second_number)
+    print(num1 + num2)
 def option_two():
-    print(first_number - second_number)
+    print(num1 - num2)
 def option_three():
-    print(first_number * second_number)
+    print(num1 * num2)
 def option_four():
-    if second_number == 0:
+    if num2 == 0:
         print("Error: Division by Zero") #might not be needed, due to pythons built in div/zero error messaging
     else:
-        print(first_number / second_number)
+        print(num1 / num2)
 
 # ------ Menu ------
 menuItems = ['1. Addition', 
